@@ -10,6 +10,6 @@ echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" 
 apt -y install gnupg-l10n gnupg gpgv
 echo "-----> apt worked"
 echo "trying to install postgis...."
-yes | apt update
-yes | apt install postgis postgresql-12-postgis-3
+# yes | apt update
+# yes | apt install postgis postgresql-12-postgis-3
 
