@@ -5,8 +5,12 @@ indent() {
 }
 
 echo "-----> Building shp2pgsql"
-# wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-# echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
-# yes | apt-get update
-# apt -y install dirmngr gpgsm gnupg-l10n gnupg gpgv
-# yes | apt-get install postgis
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
+yes | apt-get update
+apt -y install gnupg-l10n gnupg gpgv
+echo "-----> apt worked"
+echo "trying to install postgis...."
+yes | apt update
+yes | apt install postgis postgresql-12-postgis-3
+
